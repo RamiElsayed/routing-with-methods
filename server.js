@@ -12,7 +12,7 @@ app.use(routes);
 
 const init = async () => {
   try {
-    await connection.sync();
+    await connection.sync({ force: false });
     console.log(`[INFO]: DB connection successful`);
     app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`)
   );
